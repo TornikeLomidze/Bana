@@ -1,0 +1,31 @@
+{
+  "name": "assets",
+  "homepage": "https://github.com/FreitX/freitx-ico-front",
+  "description": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.9",
+    "bootstrap": "4.1.0",
+    "angular-route": "1.6.9",
+    "scrollmagic": "2.0.5",
+    "gsap": "1.20.4",
+    "jquery": "1.11.1",
+    "jquery.nicescroll": "nicescroll#3.7.6",
+    "jquery-knob": "1.2.13",
+    "jquery.throttle": "1.0.0",
+    "scrollreveal": "3.1.4",
+    "angular-cookies": "1.6.9",
+    "animate.css": "3.5.2",
+    "vivus": "0.4.3",
+    "angular-image-compress": "0.1.5",
+    "jquery-throttle-debounce": "*",
+    "three.js": "0.89.0"
+  }
+}

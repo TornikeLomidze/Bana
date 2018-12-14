@@ -1,0 +1,189 @@
+<style type="text/css">
+.js .inputfile { width: 0.1px; height: 0.1px; opacity: 0; overflow: hidden; position: absolute; z-index: -1;}
+.inputfile + label { max-width: 100%; cursor: pointer; display: inline-block; overflow: hidden; outline: none;}
+.inputfile:focus + label,
+.inputfile.has-focus + label { outline:none;}
+.inputfile + label img { width: 100%; height: 100%; vertical-align: middle; fill: currentColor;}
+.img_list footer {  color: #b39295; }
+.img_list footer a:hover,
+.img_list footer a:focus { color: #4b0f31;}
+</style>
+
+<header-tag></header-tag>
+
+<section class="space-full-hd map_box_" style="overflow: visible;" ng-controller="whitelistController">
+    <div class="avatar_reg_container">
+	    <div class="av_container">
+    		<form>
+		    	<div class="left_block">
+			        <div class="form_group">
+			        	<div class="title_line">
+			        		<h1>Add your information</h1>
+			        	</div>
+			        	<div class="input_list_group">
+		        			<div class="input_list">
+		        				<select ng-model="doc.title" tabindex="1">
+		        					<option value="" selected disabled hidden>Title</option>
+		        					<option value ="{{item}}" ng-repeat="item in genderList">{{item}}</option>
+		        				</select>
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="text" name="FirstName" placeholder="First Name" ng-model="doc.firstName" tabindex="1" required>
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="text" name="" placeholder="Middle Name(optional)" ng-model="doc.middleName" tabindex="2">
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="text" name="LastName" placeholder="Last Name" ng-model="doc.lastName" tabindex="3" required>
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="email" name="Email" placeholder="Email" ng-model="doc.email" tabindex="4" required>
+		        			</div>
+		        			<div class="input_list">
+								<input type=password  pattern="\w{8}" title="8 character password" placeholder="Password" ng-model="doc.password" tabindex="5">
+		        			</div>
+		        			<div class="input_list">
+								<input type=password pattern="\w{8}" title="8 character password" placeholder="Confirm Password" ng-model="doc.repeatPassword" tabindex="6">
+		        			</div>
+			        	</div>
+
+			        	<div class="input_list_group">
+		        			<div class="input_list">
+		        				<select ng-model="doc.country" tabindex="7">
+		        					<option value="" selected disabled hidden>Country</option>
+		        					<option value ="{{item}}" ng-repeat="item in countryList">{{item}}</option>
+		        				</select>
+		        			</div>
+		        			<div class="input_list">
+		        				<select ng-model="doc.nationality" tabindex="8">
+		        					<option value="" selected disabled hidden>Nationality</option>
+		        					<option value ="{{item}}" ng-repeat="item in nationalityList">{{item}}</option>
+		        				</select>
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="text" name="City" placeholder="City" ng-model="doc.city" tabindex="9" required>
+		        			</div>
+		        			<div class="input_list">
+		        				<select ng-model="doc.identity.documentType" tabindex="10">
+		        					<option value="" selected disabled hidden>Personal Identification Type</option>
+		        					<option value="0">National Identity Card</option>
+		        					<option value="1">Passport</option>
+		        				</select>
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="text" name="personalID" placeholder="Personal Identification Number" ng-model="doc.identity.identityNumber" tabindex="11" required>
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="text" name="StreetAddress" placeholder="Street Address" ng-model="doc.streetAddress" tabindex="12" required>
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="date" name="DateOfBirth" placeholder="Date of Birth" ng-model="doc.birthday" tabindex="13" required>
+		        			</div>
+			        	</div>
+
+			        	<div class="input_list_group">
+			        		<div class="input_list">
+		        				<input type="number" name="PhoneNumber" placeholder="Phone Number" ng-model="doc.phoneNumber" tabindex="16" required>
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="text" name="" placeholder="Postal Code" ng-model="doc.postalCode" tabindex="18">
+		        			</div>
+		        			<div class="input_list">
+		        				<input type="text" name="" placeholder="Another field..." tabindex="19">
+		        			</div>
+		        			<div class="gender">
+		        				<div>
+									<input type="radio" id="contactChoice1" ng-model="doc.gender" name="Gender" value="Male">
+								    <label for="contactChoice1">Male</label>
+		        				</div>
+		        				<div>
+								    <input type="radio" id="contactChoice2" ng-model="doc.gender" name="Gender" value="Female">
+								    <label for="contactChoice2">Female</label>
+		        				</div>
+		        			</div>
+			        	</div>
+			        </div>
+			        <div class="form_group">
+			        	<div class="input_list_group bottom">
+		        			<div class="input_list eth">
+		        				<input type="text" name="ETHwallet" placeholder="Ethereum Wallet Address" ng-model="doc.wallet"  tabindex="20">
+		        			</div>
+		        			<div>
+		        				<p>How much do you plan to contribute to the Token sale?</p>
+		        			</div>
+		        			<div class="input_list min">
+		        				<input type="number" ng-model="doc.contributionETH" name="" placeholder="" tabindex="21">
+		        			</div>
+		        			<div class="input_list checkbox">
+		        				<div class="modal-4">
+								  <div class="checkbox inline">
+								    <input type="checkbox"  tabindex="16">
+								    <label>Option 1</label>
+								  </div>
+								</div>
+		        			</div>
+		        			<div class="input_list checkbox">
+								<div class="modal-4">
+								  <div class="checkbox inline">
+								    <input type="checkbox" tabindex="17">
+								    <label>Option 1</label>
+								  </div>
+								</div>
+		        			</div>
+		        			<div class="input_list checkbox">
+								<div class="modal-4">
+								  <div class="checkbox inline">
+								    <input type="checkbox" tabindex="18">
+								    <label>Option 1</label>
+								  </div>
+								</div>
+		        			</div>
+			        	</div>
+			        </div>
+		    	</div>
+		        <div class="img_group">
+		        	<div class="img_list">
+		        		<div class="img_item">
+                            <input id="file-1" class="inputfile inputfile-1" type="file" accept="image/*" image="image1" resize-max-height="800" resize-max-width="800" resize-quality="0.7" resize-type="image/jpg" ng-image-compress>
+							<label for="file-1">
+								<img ng-if="!image1.compressed.dataURL" src="../images/ID_front.png">
+                                <img ng-if="image1.compressed.dataURL" style="width: 314px; height: 284px;" ng-src="{{image1.compressed.dataURL}}" ng-model="doc.identity.front = image1.compressed.dataURL">
+								<div class="hover_anim"></div>
+							</label>
+		        			<span>Photo of the front of your ID</span>
+		        		</div>
+		        	</div>
+
+                    <div class="img_list">
+		        		<div class="img_item">
+                            <input id="file-2" class="inputfile inputfile-1" type="file" accept="image/*" image="image2" resize-max-height="800" resize-max-width="800" resize-quality="0.7" resize-type="image/jpg" ng-image-compress>
+							<label for="file-2">
+								<img ng-if="!image2.compressed.dataURL" src="../images/ID_back.png">
+                                <img ng-if="image2.compressed.dataURL" style="width: 314px; height: 284px;" ng-src="{{image2.compressed.dataURL}}" ng-model="doc.identity.back = image2.compressed.dataURL">
+								<div class="hover_anim"></div>
+							</label>
+		        			<span>Photo of the back of your ID</span>
+		        		</div>
+		        	</div>
+
+                    <div class="img_list">
+		        		<div class="img_item">
+                            <input id="file-3" class="inputfile inputfile-1" type="file" accept="image/*" image="image3" resize-max-height="800" resize-max-width="800" resize-quality="0.7" resize-type="image/jpg" ng-image-compress>
+							<label for="file-3">
+								<img ng-if="!image3.compressed.dataURL" src="../images/ID_men.png">
+                                <img ng-if="image3.compressed.dataURL" style="width: 314px; height: 284px;" ng-src="{{image3.compressed.dataURL}}" ng-model="doc.identity.selfie = image3.compressed.dataURL">
+								<div class="hover_anim"></div>
+							</label>
+		        			<span>Photo of yourself holding your ID</span>
+		        		</div>
+		        	</div>
+
+		        </div>
+		        <div class="reg_btn_block">
+		        	<button class="reg_btn" ng-click="whitelistSignUp()">submit</button>
+		        </div>
+		    </form>
+	    </div>
+    </div>
+
+</section>

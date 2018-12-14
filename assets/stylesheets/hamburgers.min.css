@@ -1,0 +1,138 @@
+/* Push classes applied to the body */
+.cbp-spmenu-push {
+	overflow-x: hidden;
+	position: fixed;
+	right: 30px;
+	top: 25px;
+	z-index: 12;
+}
+#burger-toggle {
+	background: transparent;
+	position: absolute;
+	right: 0;
+	top: 30px;
+	height: 33px;
+	width: 37px;
+	cursor: pointer;
+	transform: translate(-13%, -94%);
+}
+
+#burger-toggle span,
+#burger-toggle span:before,
+#burger-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 2px;
+  width: 35px;
+  background: #fbb03b;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: block;
+  content: '';
+}
+#burger-toggle span:before {
+  top: -10px;
+}
+#burger-toggle span:after {
+  top: 10px;
+}
+#burger-toggle span,
+#burger-toggle span:before,
+#burger-toggle span:after {
+  transition: all 0.5s ease-in-out;
+}
+#burger-toggle.active span {
+  background-color: transparent;
+}
+#burger-toggle.active span:before,
+#burger-toggle.active span:after {
+  top: 0;
+}
+#burger-toggle.active span:before {
+  transform: rotate(135deg);
+}
+#burger-toggle.active span:after {
+  transform: rotate(-135deg);
+}
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+#showRight {
+	border: none;
+	outline: none;
+	background: transparent;
+	padding: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	margin: 10px 0;
+}
+#showRight.disabled {
+	background: #aaa;
+	pointer-events: none;
+}
+/* General styles for all menus */
+.cbp-spmenu {
+	background: #2c211c;
+	position: fixed;
+	/* box-shadow: -4px -1px 12px #1d1714; */
+}
+.cbp-spmenu a {
+	display: block;
+	color: #fbb03b;
+	font-size: 1.1em;
+	font-weight: 300;
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+}
+.cbp-spmenu a:hover {
+	background: #544940;
+	color: #cbbfad;
+	text-decoration: none;
+}
+.cbp-spmenu a:active {
+	background: #544940;
+	color: #cbbfad;
+}
+/* Orientation-dependent styles for the content of the menu */
+.cbp-spmenu-vertical {
+	width: 240px;
+	height: 100%;
+	top: 0;
+	padding-top: 70px;
+}
+.cbp-spmenu-vertical a {
+	padding: 1em 1.4em;
+}
+/* Vertical menu that slides from the left or right */
+.cbp-spmenu-right {
+	right: -240px;
+}
+.cbp-spmenu-right.cbp-spmenu-open {
+	right: 0px;
+}
+
+/* Transitions */
+.cbp-spmenu{
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+/* Example media queries */
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+
+}

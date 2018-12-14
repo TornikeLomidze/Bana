@@ -1,0 +1,99 @@
+<!-- Menu [END] -->
+<div class="header_conteiner" id="main-navbar">
+    <header class="header col-md-12">
+      <div class="row">
+        <div class="logo">
+            <a href="/"></a>
+        </div>
+        <div class="menu">
+          <a href="/" class="m_item">მთავარი გვერდი</a>
+          <a href="/newbana" class="m_item">ახალი ბანას შესახებ</a>
+          <a href="/donation" class="m_item">დონაცია</a>
+          <a href="/news" class="m_item">სიახლეები</a>
+          <a href="/feedback" class="m_item">თქვენი შეხედულება</a>
+          <!-- <a href="#" class="m_item">შესვლა</a> -->
+          <!-- Trigger the modal with a button -->
+          <button type="button" class="m_item" data-toggle="modal" data-target="#myModal">შესვლა</button>
+
+        </div>
+        <div class="cbp-spmenu-push">
+            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+                <a href="/" class="m_item">მთავარი გვერდი</a>
+                <a href="/newbana" class="m_item">ახალი ბანას შესახებ</a>
+                <a href="/donation" class="m_item">დონაცია</a>
+                <a href="/news" class="m_item">სიახლეები</a>
+                <a href="/feedback" class="m_item">თქვენი შეხედულება</a>
+                <a href="#" class="m_item">შესვლა</a>
+         </nav>
+          <button id="showRight">
+              <a id="burger-toggle" href="#"><span></span></a>
+          </button>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                    </div> -->
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="login-page">
+                          <div class="form">
+                            <form class="register-form">
+                              <input type="email" id="reg_email" placeholder="ელ-ფოსტა" name="reg_email">
+                              <input type="password" placeholder="პაროლი"/>
+                              <input type="password" placeholder="გაიმეორე პაროლი"/>
+                              <button>რეგისტრაცია</button>
+                              <p class="message"><a href="#">ავტორიზაცია</a></p>
+                            </form>
+                            <form class="login-form">
+                              <input type="email" id="email" placeholder="ელ-ფოსტა" name="email">
+                              <input type="password" placeholder="პაროლი"/>
+                              <button>შესვლა</button>
+                              <p class="message">არ გაქვს ანგარიში? <a href="#">რეგისტრაცია</a></p>
+                            </form>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+
+
+
+      </div>
+    </header>
+
+
+
+
+</div>
+<script type="text/javascript">
+
+    $('.message a').click(function(){
+       $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+
+
+
+    var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+        body = document.body;
+    showRight.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( menuRight, 'cbp-spmenu-open' );
+        disableOther( 'showRight' );
+    };
+    function disableOther( button ) {
+        if( button !== 'showRight' ) {
+            classie.toggle( showRight, 'disabled' );
+        }
+    }
+</script>
